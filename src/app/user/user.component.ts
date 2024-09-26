@@ -1,21 +1,17 @@
 import { Component, computed, EventEmitter, Input, input, output, Output, ɵɵInputTransformsFeature } from '@angular/core';
-
+import User from './user.model';
+import { CardComponent } from "../shared/card/card.component";
 // type User = {
 //   id: string;
 //   avatar: string;
 //   name: string
 // };
 
-interface User {
-  id: string;
-  avatar: string;
-  name: string
-}
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [],
+  imports: [CardComponent],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
@@ -23,6 +19,8 @@ interface User {
 export class UserComponent {
 
   @Input({required: true}) user!: User;
+
+  @Input({required: true}) selected!: boolean;
 
   //select = output<string>();
 

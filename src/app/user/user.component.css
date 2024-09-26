@@ -19,11 +19,14 @@ div {
     text-align: left;
   }
   
-  button:hover,
+  button:hover{
+    background-color: #3e1377;
+    color: white;
+  }
   button:active,
   .active {
-    background-color: #9965dd;
-    color: #150722;
+    background-color: #b28ae5 !important;
+    color: #150722 !important;
   }
   
   img {

@@ -1,20 +1,25 @@
-import { Component, Input } from '@angular/core';
-
-type Tasks={
-  id: string,
-  userId: string,
-  title: string,
-  summary: string,
-  dueDate: string
-};
+import { Component, inject, Input } from '@angular/core';
+import { type Tasks } from './task.model';
+import { DatePipe } from '@angular/common';
+import { CardComponent } from '../../shared/card/card.component';
+import { TasksService } from '../tasks.service';
 
 @Component({
   selector: 'app-task',
   standalone: true,
-  imports: [],
+  imports: [CardComponent, DatePipe],
   templateUrl: './task.component.html',
   styleUrl: './task.component.css'
 })
 export class TaskComponent {
-  @Input({required:true}) assignedTask!: Tasks;
+  @Input({required:true}) task!: Tasks;
+
+
+  private tasksService = inject(TasksService);
+
+
+
+  onCompleteTask(){
+    this.tasksService.removeTask(this.task.id);
+  }
 }

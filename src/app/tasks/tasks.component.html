@@ -1,15 +1,23 @@
+<app-new-task [userId]="userId" *ngIf="isAddingTask" (closeDialog)="onClosedAddTask()"></app-new-task>
+
 <section id="tasks">
     <header>
         <h2>{{ name }}'s Tasks : </h2>
 
         <menu>
-            <button>Add Task</button>
+            <button (click)="onStartAddTask()">Add Task</button>
         </menu>
     </header>
 
+   
+
+    <ng-template #fallback1>
+        <h2></h2>
+    </ng-template>
+
     <ul>
-       <li *ngFor="let i of selectedUserTasks">
-        <app-task [assignedTask]="i"></app-task>
+       <li *ngFor="let task of selectedUserTasks">
+        <app-task [task]="task"></app-task>
        </li>
     </ul>
 
