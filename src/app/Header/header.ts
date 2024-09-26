@@ -27,22 +27,22 @@ export class Header{
         if(event.wheelDelta < 0)
         {
              let i = this.showText().length;
-             this.showText.set(this.showText() + this.text.slice(i, i+1));
+             this.showText.set(this.showText() + this.text.slice(i, i+3));
         }
         else{
-            this.showText.set(this.showText().slice(0, this.showText.length - 1));
+            this.showText.set(this.showText().slice(0, this.showText.length - 3));
         }
     }
     removeCom(event: any){
  
         if(event.wheelDelta < 0){
              let i = this.showText1.length;
-             this.showText1.set(this.showText1().slice(0,i-2));
+             this.showText1.set(this.showText1().slice(0,i-6));
         }
         else{
              let i = this.showText1().length;
 
-             this.showText1.set(this.text1.slice(0, i+2));
+             this.showText1.set(this.text1.slice(0, i+6));
         }
     }
 }

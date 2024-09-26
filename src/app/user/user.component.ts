@@ -26,7 +26,7 @@ export class UserComponent {
 
   //select = output<string>();
 
-  @Output() select = new EventEmitter<string>();
+  @Output() selec = new EventEmitter();
 
   //select = output();
   // avatar = input.required<string>();
@@ -41,7 +41,6 @@ export class UserComponent {
   // });
 
   onSelectUser(){
-    this.select.emit(this.user.id);
+    this.selec.emit(this.user.id);
   }
-
 }
