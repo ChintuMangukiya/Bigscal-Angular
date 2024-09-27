@@ -27,7 +27,7 @@ export class NewTaskComponent {
     this.tasksService.addTask({
       title: this.enteredTitle,
       summary: this.enteredSummary,
-      date: this.enteredSummary
+      date: this.enteredDate
     }, this.userId);
     this.closeDialog.emit();
   }
