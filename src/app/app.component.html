@@ -10,14 +10,15 @@
         />
       </li>
 
-    <!-- @for (user of users; track user.id) { 
+    @for (user of users; track user.id) { 
     <li>
       <app-user
         [user] = "user"
         (selec)="onSelectUser($event)"
+        [selected]="user.id === selectedUserId"
       />
     </li>
-     } -->
+     }
   </ul>
 
   <!-- @if (selectedUser) {<app-tasks [name]="selectedUser? selectedUser!.name : ''"></app-tasks>} -->

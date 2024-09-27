@@ -3,13 +3,11 @@ import { Component, signal } from '@angular/core';
 
 @Component({
     selector:'h12',
-    standalone:true || false,
-    imports:[],
     templateUrl: './header.component.html',
     styleUrl:'./header.css',
 })
 
-export class Header{
+export class HeaderComponent{
     lt = 1;
 
     text = "Let's get started!";
